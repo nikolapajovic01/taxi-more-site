@@ -1,30 +1,35 @@
 import type { Metadata } from "next";
-import { Sora } from "next/font/google";
+import { Oswald, Outfit } from "next/font/google";
 import "./globals.css";
 
-const sora = Sora({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
-  variable: "--font-sora",
+const outfit = Outfit({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const oswald = Oswald({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
+  variable: "--font-condensed",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://taximore.me"),
-  title: "Taxi More — Premium električni taksi prevoz | Herceg Novi",
+  title: "Taxi More 19730 - Električni taksi | Herceg Novi",
   description:
-    "Tiha, udobna i potpuno električna vožnja kroz Herceg Novi. Premium EV flota, aerodromski transferi po fiksnoj cijeni, dostupni 24/7. Pozovi 19730.",
+    "Tišina je nova energija grada. 80 električnih BYD vozila, 24/7. Pozovite 19730. Sestrinski brend DAJMI grupe.",
   keywords: [
     "taxi Herceg Novi",
-    "električni taksi",
-    "aerodromski transfer Tivat",
-    "transfer Dubrovnik",
     "Taxi More",
+    "19730",
+    "električni taksi",
+    "aerodromski transfer",
   ],
   openGraph: {
-    title: "Taxi More — Premium električni taksi prevoz",
-    description:
-      "Tiha, udobna i potpuno električna vožnja kroz Herceg Novi — 24/7.",
+    title: "Taxi More 19730 - Električni taksi Herceg Novi",
+    description: "Tišina je nova energija grada. Pozovite 19730.",
     locale: "sr_Latn",
     type: "website",
     url: "https://taximore.me",
@@ -37,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sr-Latn" className={sora.variable}>
+    <html lang="sr-Latn" className={`${outfit.variable} ${oswald.variable}`}>
       <body>{children}</body>
     </html>
   );

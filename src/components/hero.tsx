@@ -1,78 +1,51 @@
-import { BookingForm } from "./booking-form";
-
-function Eyebrow() {
-  return (
-    <div className="flex items-center gap-2.5">
-      <span className="h-px w-[26px] bg-brand" />
-      <span className="text-[11px] uppercase tracking-[0.34em] text-[#aeb6c6]">
-        Premium električni prevoz
-      </span>
-    </div>
-  );
-}
+import Image from "next/image";
+import { PhoneIcon } from "./icons";
+import { photos, shortNumber } from "@/lib/site";
+import { Reveal } from "./reveal";
 
 export function Hero() {
   return (
-    <section id="pocetna" className="relative bg-ink">
-      {/* ---------- Desktop ---------- */}
-      <div className="relative hidden min-h-[760px] lg:flex">
-        <div className="relative z-10 flex w-[45%] flex-col justify-center px-14">
-          <Eyebrow />
-          <h1 className="mt-6 text-[62px] font-light leading-[0.98] tracking-[-0.025em] text-white">
-            Vaš put.
-            <br />
-            <span className="font-semibold">Naša briga.</span>
-          </h1>
-          <p className="mt-6 max-w-[380px] text-base font-light leading-relaxed text-[#aab1c0]">
-            Tiha, udobna i potpuno električna vožnja kroz Herceg Novi — kad god
-            vam treba, 24 sata dnevno.
-          </p>
-          <div id="naruci">
-            <BookingForm variant="desktop" />
-          </div>
-        </div>
-        <div className="relative w-[55%] overflow-hidden">
-          <div
-            className="absolute inset-0 bg-no-repeat"
-            style={{
-              backgroundImage: "url('/fleet/interior.jpg')",
-              backgroundSize: "165%",
-              backgroundPosition: "100% 56%",
-            }}
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,#05070d_0%,rgba(5,7,13,0.2)_22%,rgba(5,7,13,0)_55%)]" />
-        </div>
-      </div>
+    <section id="pocetna" className="relative min-h-[100svh] overflow-hidden">
+      <Image
+        src={photos.hero}
+        alt="Flota električnih BYD vozila Taxi More"
+        fill
+        priority
+        loading="eager"
+        sizes="100vw"
+        className="object-cover object-[50%_62%]"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,10,20,0.45)_0%,rgba(5,10,20,0.2)_32%,rgba(5,10,20,0.72)_78%,#050a14_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,10,20,0.55)_0%,transparent_55%)]" />
 
-      {/* ---------- Mobile ---------- */}
-      <div className="lg:hidden">
-        <div className="relative h-[560px] overflow-hidden">
-          <div
-            className="absolute inset-0 bg-no-repeat"
-            style={{
-              backgroundImage: "url('/fleet/interior.jpg')",
-              backgroundSize: "174%",
-              backgroundPosition: "100% 62%",
-            }}
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,13,0.55)_0%,rgba(5,7,13,0)_26%,rgba(5,7,13,0.1)_50%,rgba(5,7,13,0.92)_88%,#05070d_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,13,0.6),rgba(5,7,13,0)_55%)]" />
-          <div className="absolute inset-x-6 bottom-10">
-            <Eyebrow />
-            <h1 className="mt-4 text-[44px] font-light leading-none tracking-[-0.02em] text-white">
-              Vaš put.
-              <br />
-              <span className="font-semibold">Naša briga.</span>
-            </h1>
-            <p className="mt-4 max-w-[280px] text-[13.5px] font-light leading-[1.55] text-[#aab1c0]">
-              Tiha, udobna i potpuno električna vožnja kroz Herceg Novi — kad god
-              vam treba.
-            </p>
+      <div className="wrap relative flex min-h-[100svh] flex-col justify-end pb-16 pt-28 md:pb-24">
+        <Reveal when="load">
+            <p className="font-condensed text-[13px] font-semibold uppercase tracking-[0.28em] text-white">
+            Taxi More · Herceg Novi
+          </p>
+        </Reveal>
+        <Reveal when="load" delay={120}>
+          <h1 className="mt-7 max-w-[14ch] font-condensed text-[52px] font-extrabold uppercase leading-[0.88] tracking-tight text-white md:text-[88px] md:mt-8">
+            Tišina je nova energija grada
+          </h1>
+        </Reveal>
+        <Reveal when="load" delay={240}>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={`tel:${shortNumber.tel}`}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-brand-bright"
+            >
+              <PhoneIcon className="h-4 w-4" />
+              Pozovite {shortNumber.label}
+            </a>
+            <a
+              href="#rezervacija"
+              className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-6 py-3.5 text-[15px] font-semibold text-white backdrop-blur-sm transition-colors hover:border-white/50"
+            >
+              Preuzmite aplikaciju
+            </a>
           </div>
-        </div>
-        <div id="naruci" className="relative z-10 -mt-6 px-6">
-          <BookingForm variant="mobile" />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,21 +1,21 @@
-import { Navbar } from "@/components/navbar";
+import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
-import { Stats } from "@/components/stats";
+import { Services } from "@/components/services";
 import { Fleet } from "@/components/fleet";
-import { Transfers } from "@/components/transfers";
-import { AppAndReviews } from "@/components/app-reviews";
+import { Booking } from "@/components/booking";
+import { Gallery } from "@/components/gallery";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Header />
       <main>
         <Hero />
-        <Stats />
+        <Services />
         <Fleet />
-        <Transfers />
-        <AppAndReviews />
+        <Booking />
+        <Gallery />
       </main>
       <Footer />
     </>

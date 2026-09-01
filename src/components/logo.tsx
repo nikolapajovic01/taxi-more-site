@@ -1,15 +1,23 @@
-import { BoltIcon } from "./icons";
+import Image from "next/image";
 
-export function Logo({ className = "" }: { className?: string }) {
+export function Logo({
+  className = "",
+  priority = false,
+}: {
+  className?: string;
+  priority?: boolean;
+}) {
   return (
-    <div className={`flex items-center gap-2 text-white ${className}`}>
-      <span className="text-[19px] font-bold leading-none">TAXI</span>
-      <span className="grid h-[21px] w-[21px] place-items-center rounded-full bg-brand text-white">
-        <BoltIcon className="h-3 w-3" />
-      </span>
-      <span className="text-[19px] font-light leading-none tracking-[0.18em]">
-        MORE
-      </span>
-    </div>
+    <span className={`inline-flex items-center ${className}`}>
+      <Image
+        src="/fleet/taxi-more/taxi-more-clean-alpha.png"
+        alt="Taxi More"
+        width={1536}
+        height={1024}
+        priority={priority}
+        sizes="240px"
+        className="h-14 w-auto md:h-[76px]"
+      />
+    </span>
   );
 }

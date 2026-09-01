@@ -1,82 +1,110 @@
 import { Logo } from "./logo";
-import { PhoneIcon } from "./icons";
-import { nav, site } from "@/lib/site";
+import { FacebookIcon, InstagramIcon, PhoneIcon } from "./icons";
+import { extras, phones, shortNumber, site } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer id="o-nama" className="border-t border-white/[0.06] bg-[#04060b]">
-      {/* ---------- Desktop ---------- */}
-      <div className="mx-auto hidden max-w-[1280px] grid-cols-[1.4fr_1fr_1fr_1.2fr] gap-9 px-14 py-14 md:grid">
+    <footer id="kontakt" className="border-t border-white/10 bg-[#03060d]">
+      <div className="wrap grid gap-10 py-14 md:grid-cols-[1fr_1fr_1.2fr] md:py-16">
         <div>
-          <Logo className="mb-[18px]" />
-          <p className="max-w-[240px] text-[13px] font-light leading-relaxed text-[#8b91a2]">
-            Premium električni taksi prevoz u Herceg Novom i okolini.
+          <div className="flex items-center gap-2">
+            <Logo />
+            <span className="font-condensed text-[22px] font-extrabold text-brand">
+              {shortNumber.label}
+            </span>
+          </div>
+          <p className="mt-4 max-w-[28ch] text-[14px] leading-relaxed text-white/55">
+            Sestrinski brend DAJMI grupe. Električni taksi prevoz u Herceg
+            Novom.
           </p>
-        </div>
-        <div>
-          <div className="mb-4 text-[11px] uppercase tracking-[0.2em] text-[#6c7385]">
-            Navigacija
-          </div>
-          <div className="flex flex-col gap-[11px]">
-            {nav.slice(1).map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
-                className="text-[13.5px] font-light text-[#aeb6c6] transition-colors hover:text-white"
-              >
-                {n.label}
-              </a>
-            ))}
-          </div>
-        </div>
-        <div>
-          <div className="mb-4 text-[11px] uppercase tracking-[0.2em] text-[#6c7385]">
-            Kontakt
-          </div>
-          <div className="flex flex-col gap-[11px] text-[13.5px] font-light text-[#aeb6c6]">
-            <a href={`tel:${site.phoneTel}`} className="hover:text-white">
-              {site.phone}
-            </a>
-            <span>Viber · WhatsApp</span>
-            <span>{site.location}</span>
-          </div>
-        </div>
-        <div>
-          <div className="mb-4 text-[11px] uppercase tracking-[0.2em] text-[#6c7385]">
-            Pozovi 24/7
-          </div>
           <a
-            href={`tel:${site.phoneTel}`}
-            className="text-[34px] font-semibold tracking-[0.04em] text-white"
+            href={site.dajmi}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block text-[13px] font-semibold tracking-wide text-brand hover:text-brand-bright"
           >
-            {site.shortPhone}
+            Dio DAJMI grupe →
           </a>
-          <div className="mt-3.5 text-[10px] font-light uppercase tracking-[0.22em] text-[#5b6172]">
-            {site.tagline}
+          <div className="mt-6 flex gap-3">
+            <a
+              href={site.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram Taxi More"
+              className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white/80 hover:border-white/40 hover:text-white"
+            >
+              <InstagramIcon className="h-4 w-4" />
+            </a>
+            <a
+              href={site.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook Taxi More"
+              className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white/80 hover:border-white/40 hover:text-white"
+            >
+              <FacebookIcon className="h-4 w-4" />
+            </a>
           </div>
         </div>
-      </div>
 
-      {/* ---------- Mobile ---------- */}
-      <div className="px-6 py-8 md:hidden">
-        <Logo className="mb-[18px]" />
-        <a
-          href={`tel:${site.phoneTel}`}
-          className="mb-4 flex items-center gap-3.5 rounded-2xl border border-white/10 p-[15px]"
-        >
-          <PhoneIcon className="h-5 w-5 text-brand" />
-          <span className="flex-1">
-            <span className="block text-[10px] uppercase tracking-[0.18em] text-[#6c7385]">
-              Pozovi 24/7
-            </span>
-            <span className="block text-[20px] font-semibold tracking-[0.04em] text-white">
-              {site.shortPhone}
-            </span>
-          </span>
-          <span className="text-[10.5px] text-[#6c7385]">Viber · WhatsApp</span>
-        </a>
-        <div className="text-center text-[10px] font-light uppercase tracking-[0.24em] text-[#5b6172]">
-          {site.tagline}
+        <div>
+          <h2 className="font-condensed text-[13px] font-bold uppercase tracking-[0.22em] text-white/40">
+            Kontakt
+          </h2>
+          <a
+            href={`tel:${shortNumber.tel}`}
+            className="mt-4 flex items-center gap-2 font-condensed text-[34px] font-extrabold leading-none text-white hover:text-brand"
+          >
+            <PhoneIcon className="h-6 w-6 text-brand" />
+            {shortNumber.label}
+          </a>
+          <ul className="mt-4 space-y-1.5 text-[14px] text-white/70">
+            {phones.map((p) => (
+              <li key={p.tel}>
+                <a href={`tel:${p.tel}`} className="hover:text-white">
+                  {p.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-[13px] font-semibold uppercase tracking-[0.18em] text-brand">
+            Radno vrijeme {site.hours}
+          </p>
+          <ul className="mt-6 space-y-1.5 text-[13px] text-white/45">
+            {extras.map((item) => (
+              <li key={item.label}>
+                {item.label}:{" "}
+                <a href={`tel:${item.tel}`} className="text-white/70 hover:text-white">
+                  {item.value}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="font-condensed text-[13px] font-bold uppercase tracking-[0.22em] text-white/40">
+            Lokacija
+          </h2>
+          <a
+            href={site.mapLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 block text-[15px] text-white/75 hover:text-white"
+          >
+            {site.address}
+            <br />
+            {site.location}
+          </a>
+          <div className="mt-4 overflow-hidden rounded-xl border border-white/10">
+            <iframe
+              title="Taxi More na mapi - Herceg Novi"
+              src={site.mapEmbed}
+              className="h-[180px] w-full grayscale invert"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </div>
     </footer>

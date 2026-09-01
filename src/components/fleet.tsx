@@ -1,61 +1,104 @@
-import { SectionHeading } from "./section-heading";
-import { fleet } from "@/lib/site";
+"use client";
 
-function Tag({ children }: { children: string }) {
-  return (
-    <span className="rounded-[7px] border border-white/10 px-[9px] py-1 text-[10px] text-[#aeb6c6] md:rounded-lg md:px-[11px] md:py-[5px] md:text-[11px]">
-      {children}
-    </span>
-  );
-}
+import { useState } from "react";
+import Image from "next/image";
+import { photos } from "@/lib/site";
+import { Lightbox } from "./lightbox";
+import { Reveal } from "./reveal";
 
 export function Fleet() {
+  const [open, setOpen] = useState<number | null>(null);
+  const items = photos.gallery;
+  const ecoIndex = items.findIndex((p) => p.src === photos.eco);
+  const sideIndex = items.findIndex((p) => p.src === photos.ecoSide);
+
   return (
-    <section id="flota" className="bg-ink py-12 md:py-[72px]">
-      <div className="mx-auto max-w-[1280px]">
-        <div className="mb-5 flex items-end justify-between px-6 md:mb-9 md:px-14">
-          <SectionHeading eyebrow="Naša flota">
-            Potpuno <span className="font-semibold">električna.</span>
-          </SectionHeading>
-          <a
-            href="#transferi"
-            className="shrink-0 text-[11px] font-light text-[#8b91a2] transition-colors hover:text-white md:text-[13px]"
-          >
-            Vidi sve →
-          </a>
+    <section id="flota" className="bg-navy-2 py-16 md:py-24">
+      <div className="wrap grid items-center gap-10 md:grid-cols-[1.05fr_0.95fr] md:gap-14">
+        <div>
+          <p className="font-condensed text-[13px] font-semibold uppercase tracking-[0.28em] text-brand">
+            Eco flota
+          </p>
+          <h2 className="mt-3 font-condensed text-[40px] font-extrabold uppercase leading-[0.92] tracking-tight md:text-[56px]">
+            Nova energija. Ista pouzdanost.
+          </h2>
+          <p className="mt-6 max-w-[42ch] text-[16px] leading-relaxed text-white/70">
+            80 električnih BYD vozila u Herceg Novom. Tiha vožnja kroz grad,
+            nulta lokalna emisija, isti 24/7 ritam na koji ste navikli.
+          </p>
+          <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
+            <div>
+              <dt className="text-[11px] uppercase tracking-[0.18em] text-white/45">
+                EV vozila
+              </dt>
+              <dd className="mt-1 font-condensed text-[36px] font-extrabold leading-none text-white md:text-[44px]">
+                80
+              </dd>
+            </div>
+            <div>
+              <dt className="text-[11px] uppercase tracking-[0.18em] text-white/45">
+                Dostupnost
+              </dt>
+              <dd className="mt-1 font-condensed text-[36px] font-extrabold leading-none text-white md:text-[44px]">
+                24/7
+              </dd>
+            </div>
+            <div>
+              <dt className="text-[11px] uppercase tracking-[0.18em] text-white/45">
+                Broj
+              </dt>
+              <dd className="mt-1 font-condensed text-[36px] font-extrabold leading-none text-brand md:text-[44px]">
+                19730
+              </dd>
+            </div>
+          </dl>
         </div>
 
-        <div className="no-scrollbar flex gap-3.5 overflow-x-auto px-6 md:grid md:grid-cols-3 md:gap-[22px] md:overflow-visible md:px-14">
-          {fleet.map((car) => (
-            <article
-              key={car.name}
-              className="flex w-[232px] shrink-0 flex-col overflow-hidden rounded-[20px] border border-white/[0.07] bg-ink-3 md:w-auto md:rounded-[18px]"
-            >
-              <div
-                className="h-[150px] bg-no-repeat md:h-[210px]"
-                style={{
-                  backgroundImage: `url('${car.image}')`,
-                  backgroundSize: car.size,
-                  backgroundPosition: car.position,
-                }}
-              />
-              <div className="p-[14px] md:p-[22px] md:pb-6">
-                <h3 className="text-[15px] font-semibold text-[#f1f3f8] md:text-[18px]">
-                  {car.name}
-                </h3>
-                <p className="mt-0.5 text-[11px] font-light text-[#727989] md:mt-1 md:text-[12.5px]">
-                  {car.desc}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-1.5 md:mt-4 md:gap-2">
-                  {car.tags.map((t) => (
-                    <Tag key={t}>{t}</Tag>
-                  ))}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+        <Reveal className="grid gap-3">
+          <button
+            type="button"
+            onClick={() => setOpen(ecoIndex >= 0 ? ecoIndex : 0)}
+            className="relative aspect-[16/10] cursor-zoom-in overflow-hidden rounded-2xl border-0 bg-transparent p-0 text-left"
+            aria-label="Otvori sliku: BYD Atto 3 Taxi More na električnom punjenju"
+          >
+            <Image
+              src={photos.eco}
+              alt="BYD Atto 3 Taxi More na električnom punjenju"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </button>
+          <button
+            type="button"
+            onClick={() => setOpen(sideIndex >= 0 ? sideIndex : 0)}
+            className="relative hidden aspect-[16/7] cursor-zoom-in overflow-hidden rounded-2xl border-0 bg-transparent p-0 text-left md:block"
+            aria-label="Otvori sliku: Parkirana flota električnih taksija Taxi More"
+          >
+            <Image
+              src={photos.ecoSide}
+              alt="Parkirana flota električnih taksija Taxi More"
+              fill
+              sizes="50vw"
+              className="object-cover object-center"
+            />
+          </button>
+        </Reveal>
       </div>
+
+      {open !== null && (
+        <Lightbox
+          photos={items}
+          index={open}
+          onClose={() => setOpen(null)}
+          onPrev={() =>
+            setOpen((i) => (i === null ? 0 : (i + items.length - 1) % items.length))
+          }
+          onNext={() =>
+            setOpen((i) => (i === null ? 0 : (i + 1) % items.length))
+          }
+        />
+      )}
     </section>
   );
 }

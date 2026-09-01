@@ -1,12 +1,12 @@
 export const site = {
   name: "Taxi More",
   tagline: "Vaša vožnja. Naš standard.",
-  location: "Herceg Novi, Crna Gora",
-  address: "Jadranski put 36",
+  location: "Igalo, Crna Gora",
+  address: "Jadranski put 63",
   hours: "24/7",
   mapEmbed:
-    "https://maps.google.com/maps?q=Jadranski+put+36,+Herceg+Novi,+Montenegro&z=16&output=embed",
-  mapLink: "https://maps.google.com/?q=Jadranski+put+36,+Herceg+Novi",
+    "https://maps.google.com/maps?q=Jadranski+put+63,+Igalo,+Montenegro&z=16&output=embed",
+  mapLink: "https://maps.google.com/?q=Jadranski+put+63,+Igalo",
   dajmi: "https://dajmi.me",
   instagram: "https://www.instagram.com/taximore19730/",
   facebook: "https://www.facebook.com/taximore19730",

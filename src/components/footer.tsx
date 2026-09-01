@@ -98,7 +98,7 @@ export function Footer() {
           </a>
           <div className="mt-4 overflow-hidden rounded-xl border border-white/10">
             <iframe
-              title="Taxi More na mapi - Herceg Novi"
+              title="Taxi More na mapi - Igalo"
               src={site.mapEmbed}
               className="h-[180px] w-full grayscale invert"
               loading="lazy"

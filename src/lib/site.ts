@@ -78,7 +78,7 @@ export const services = [
   },
   {
     title: "Aerodromski transfer",
-    text: "Tivat, Dubrovnik, Podgorica. Udoban prevoz sa prostorom za prtljag.",
+    text: "Tivat i Podgorica. Udoban prevoz sa prostorom za prtljag.",
   },
   {
     title: "Poslovna putovanja",

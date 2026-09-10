@@ -5,27 +5,28 @@ import { Reveal } from "./reveal";
 
 export function Hero() {
   return (
-    <section id="pocetna" className="relative min-h-[100svh] overflow-hidden">
+    <section id="pocetna" className="relative min-h-[100svh] overflow-hidden bg-navy">
       <Image
         src={photos.hero}
-        alt="Flota električnih BYD vozila Taxi More"
+        alt="Noćna flota električnih BYD vozila Taxi More na punjenju"
         fill
         priority
         loading="eager"
         sizes="100vw"
-        className="object-cover object-[50%_62%]"
+        className="hero-drift object-cover object-[58%_42%]"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,10,20,0.45)_0%,rgba(5,10,20,0.2)_32%,rgba(5,10,20,0.72)_78%,#050a14_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,10,20,0.55)_0%,transparent_55%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,10,20,0.5)_0%,rgba(5,10,20,0.12)_32%,rgba(5,10,20,0.45)_62%,#050a14_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,10,20,0.78)_0%,rgba(5,10,20,0.35)_38%,rgba(5,10,20,0.08)_62%,transparent_78%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-[radial-gradient(ellipse_at_bottom,rgba(37,99,235,0.22),transparent_68%)]" />
 
       <div className="wrap relative flex min-h-[100svh] flex-col justify-end pb-16 pt-28 md:pb-24">
         <Reveal when="load">
-            <p className="font-condensed text-[13px] font-semibold uppercase tracking-[0.28em] text-white">
+          <p className="font-condensed text-[13px] font-semibold uppercase tracking-[0.28em] text-white/90">
             Taxi More · Herceg Novi
           </p>
         </Reveal>
         <Reveal when="load" delay={120}>
-          <h1 className="mt-7 max-w-[14ch] font-condensed text-[52px] font-extrabold uppercase leading-[0.88] tracking-tight text-white md:text-[88px] md:mt-8">
+          <h1 className="mt-7 max-w-[14ch] font-condensed text-[52px] font-extrabold uppercase leading-[0.88] tracking-tight text-white md:mt-8 md:text-[88px]">
             Tišina je nova energija grada
           </h1>
         </Reveal>

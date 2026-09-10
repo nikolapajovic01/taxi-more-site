@@ -39,34 +39,72 @@ export const nav = [
   { label: "Galerija", href: "#galerija" },
 ];
 
+export type GallerySpan = "feature" | "wide" | "tall";
+
 export const photos = {
-  hero: "/fleet/taxi-more/IMG_4317.webp",
-  eco: "/fleet/taxi-more/IMG_4312.webp",
-  ecoSide: "/fleet/taxi-more/IMG_4311.webp",
+  hero: "/fleet/taxi-more/AQ5A9311.webp",
+  eco: "/fleet/taxi-more/AQ5A9233.webp",
+  ecoSide: "/fleet/taxi-more/AQ5A8880.webp",
   gallery: [
     {
-      src: "/fleet/taxi-more/IMG_4311.webp",
-      alt: "Flota bijelih BYD vozila Taxi More, Herceg Novi",
+      src: "/fleet/taxi-more/AQ5A9233.webp",
+      alt: "Noćna flota Taxi More na električnom punjenju",
+      span: "feature" as const,
     },
     {
-      src: "/fleet/taxi-more/IMG_4312.webp",
-      alt: "BYD Atto 3 Taxi More na punjenju",
+      src: "/fleet/taxi-more/AQ5A8978.webp",
+      alt: "Krovni znak Taxi More na BYD vozilu",
+      span: "tall" as const,
     },
     {
-      src: "/fleet/taxi-more/IMG_4313.webp",
-      alt: "Redovi električnih BYD taksija ispred baze 19730",
+      src: "/fleet/taxi-more/AQ5A9288.webp",
+      alt: "Taxi More krovni znakovi noću na punjenju",
+      span: "tall" as const,
     },
     {
-      src: "/fleet/taxi-more/IMG_4314.webp",
-      alt: "Taxi More BYD ispred baze sa brojem 19730",
+      src: "/fleet/taxi-more/AQ5A9022.webp",
+      alt: "Red električnih BYD taksija pod solarim nadstrešnicom",
+      span: "wide" as const,
     },
     {
-      src: "/fleet/taxi-more/IMG_4317.webp",
-      alt: "Prednji red BYD vozila flote Taxi More",
+      src: "/fleet/taxi-more/AQ5A9129.webp",
+      alt: "Taxi More BYD i Schneider punjač",
     },
     {
-      src: "/fleet/taxi-more/IMG_4321.webp",
+      src: "/fleet/taxi-more/AQ5A8901.webp",
+      alt: "BYD Taxi More priključeno na punjač",
+    },
+    {
+      src: "/fleet/taxi-more/AQ5A9080.webp",
+      alt: "Schneider EV punjači i flota sa TX tablicama",
+      span: "wide" as const,
+    },
+    {
+      src: "/fleet/taxi-more/AQ5A9264.webp",
       alt: "Enterijer električnog BYD vozila Taxi More",
+      span: "tall" as const,
+    },
+    {
+      src: "/fleet/taxi-more/AQ5A9061.webp",
+      alt: "Flota Taxi More i planina iznad Herceg Novog",
+      span: "tall" as const,
+    },
+    {
+      src: "/fleet/taxi-more/AQ5A8880.webp",
+      alt: "BYD Taxi More na dnevnom punjenju",
+    },
+    {
+      src: "/fleet/taxi-more/AQ5A8892.webp",
+      alt: "Tri BYD taksija na punjenju ispred žutog zida",
+    },
+    {
+      src: "/fleet/taxi-more/AQ5A8969.webp",
+      alt: "Baza Taxi More sa brojem 19730",
+    },
+    {
+      src: "/fleet/taxi-more/AQ5A9311.webp",
+      alt: "Noćna flota Taxi More pod zelenim EV svjetlom",
+      span: "wide" as const,
     },
   ],
 };

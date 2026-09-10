@@ -29,8 +29,10 @@ export function Hero() {
               </p>
             </Reveal>
             <Reveal when="load" delay={120}>
-              <h1 className="mt-7 max-w-[14ch] font-condensed text-[52px] font-extrabold uppercase leading-[0.88] tracking-tight text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)] md:mt-8 md:text-[88px]">
-                Tišina je nova energija grada
+              <h1 className="mt-7 max-w-[11ch] font-condensed text-[52px] font-extrabold uppercase leading-[1.12] tracking-tight text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)] md:mt-8 md:max-w-none md:text-[88px] md:leading-[1.14]">
+                Vi pozovete.
+                <br />
+                Mi stižemo.
               </h1>
             </Reveal>
             <Reveal when="load" delay={240}>

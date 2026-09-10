@@ -61,7 +61,7 @@ export function Gallery() {
                     }
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
                   />
-                  <span className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+                  <span className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
                 </button>
               </Reveal>
             );

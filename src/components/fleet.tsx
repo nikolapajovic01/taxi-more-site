@@ -66,16 +66,16 @@ export function Fleet() {
             type="button"
             onClick={() => setOpen(ecoIndex >= 0 ? ecoIndex : 0)}
             className="group relative col-span-2 aspect-[16/10] cursor-zoom-in overflow-hidden rounded-2xl border-0 bg-transparent p-0 text-left"
-            aria-label="Otvori sliku: Taxi More noću na punjenju"
+            aria-label="Otvori sliku: flota Taxi More danju"
           >
             <Image
               src={photos.eco}
-              alt="Noćna flota Taxi More na električnom punjenju"
+              alt="Flota Taxi More ispred baze i planine iznad Herceg Novog"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             />
-            <span className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
+            <span className="absolute inset-0 bg-gradient-to-t from-navy/25 via-transparent to-transparent" />
           </button>
           <button
             type="button"

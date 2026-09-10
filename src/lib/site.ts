@@ -42,13 +42,13 @@ export const nav = [
 export type GallerySpan = "feature" | "wide" | "tall";
 
 export const photos = {
-  hero: "/fleet/taxi-more/AQ5A9311.webp",
-  eco: "/fleet/taxi-more/AQ5A9233.webp",
+  hero: "/fleet/taxi-more/AQ5A9022.webp",
+  eco: "/fleet/taxi-more/AQ5A9061.webp",
   ecoSide: "/fleet/taxi-more/AQ5A8880.webp",
   gallery: [
     {
-      src: "/fleet/taxi-more/AQ5A9233.webp",
-      alt: "Noćna flota Taxi More na električnom punjenju",
+      src: "/fleet/taxi-more/AQ5A9061.webp",
+      alt: "Flota Taxi More ispred baze i planine iznad Herceg Novog",
       span: "feature" as const,
     },
     {
@@ -57,13 +57,18 @@ export const photos = {
       span: "tall" as const,
     },
     {
-      src: "/fleet/taxi-more/AQ5A9288.webp",
-      alt: "Taxi More krovni znakovi noću na punjenju",
+      src: "/fleet/taxi-more/AQ5A9118.webp",
+      alt: "Dva BYD Atto 3 Taxi More na dnevnom punjenju",
       span: "tall" as const,
     },
     {
       src: "/fleet/taxi-more/AQ5A9022.webp",
-      alt: "Red električnih BYD taksija pod solarim nadstrešnicom",
+      alt: "Red električnih BYD taksija pod nadstrešnicom",
+      span: "wide" as const,
+    },
+    {
+      src: "/fleet/taxi-more/AQ5A9080.webp",
+      alt: "Schneider EV punjači i flota sa TX tablicama",
       span: "wide" as const,
     },
     {
@@ -75,19 +80,9 @@ export const photos = {
       alt: "BYD Taxi More priključeno na punjač",
     },
     {
-      src: "/fleet/taxi-more/AQ5A9080.webp",
-      alt: "Schneider EV punjači i flota sa TX tablicama",
+      src: "/fleet/taxi-more/AQ5A9032.webp",
+      alt: "Električna flota Taxi More u nizu na punjenju",
       span: "wide" as const,
-    },
-    {
-      src: "/fleet/taxi-more/AQ5A9264.webp",
-      alt: "Enterijer električnog BYD vozila Taxi More",
-      span: "tall" as const,
-    },
-    {
-      src: "/fleet/taxi-more/AQ5A9061.webp",
-      alt: "Flota Taxi More i planina iznad Herceg Novog",
-      span: "tall" as const,
     },
     {
       src: "/fleet/taxi-more/AQ5A8880.webp",

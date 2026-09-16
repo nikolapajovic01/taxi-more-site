@@ -48,9 +48,9 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="font-condensed text-[13px] font-bold uppercase tracking-[0.22em] text-white/40">
+          <h3 className="font-condensed text-[13px] font-bold uppercase tracking-[0.22em] text-white/40">
             Kontakt
-          </h2>
+          </h3>
           <a
             href={`tel:${shortNumber.tel}`}
             className="mt-4 flex items-center gap-2 font-condensed text-[34px] font-extrabold leading-none text-white hover:text-brand"
@@ -83,9 +83,9 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="font-condensed text-[13px] font-bold uppercase tracking-[0.22em] text-white/40">
+          <h3 className="font-condensed text-[13px] font-bold uppercase tracking-[0.22em] text-white/40">
             Lokacija
-          </h2>
+          </h3>
           <a
             href={site.mapLink}
             target="_blank"
